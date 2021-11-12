@@ -1,0 +1,14 @@
+.app-name {
+  background-color: lightslategrey;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 5px;
+}
+
+.dashboard {
+  background-color: #61dafb;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5px;
+  border-radius: 5px;
+}
