@@ -1,14 +1,24 @@
+.menu {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
 .app-name {
-  background-color: lightslategrey;
+  margin-top: 20px;
+  background: rgba(117, 133, 150, 0.6);
   display: flex;
   justify-content: space-around;
   border-radius: 5px;
+  width: 80%;
 }
 
 .dashboard {
-  background-color: #61dafb;
+  background: rgb(121, 213, 255, 0.6);
   display: flex;
   justify-content: space-around;
+  align-self: center;
   margin-top: 5px;
   border-radius: 5px;
+  width: 70%;
 }

@@ -1,0 +1,28 @@
+.driver-form {
+  width: 30vw;
+  height: 35vw;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  margin: 20px auto;
+  padding: 10px;
+  box-shadow: 0 0 10px 1px #3333;
+  background-color: rgb(97, 194, 110);
+  opacity: 0.9;
+  text-indent: 10px;
+  color: cornsilk;
+  border-radius: 5px;
+}
+
+.driver-btn {
+  height: 40px;
+  border: none;
+  font-size: large;
+  color: white;
+  background-color: rgb(148, 219, 67);
+  border-radius: 10px;
+}
+
+.driver-form:hover {
+  opacity: 0.95;
+}

@@ -1,0 +1,44 @@
+.company-form {
+  width: 30vw;
+  height: 35vw;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  margin: 20px auto;
+  padding: 10px;
+  box-shadow: 0 0 10px 1px #3333;
+  background-color: lightskyblue;
+  opacity: 0.9;
+  text-indent: 10px;
+  color: cornsilk;
+  border-radius: 5px;
+}
+
+label {
+  display: flex;
+  flex-flow: column;
+}
+
+input,
+select {
+  height: 40px;
+  margin: 10px;
+  border-radius: 5px;
+  border-style: inset;
+  border-color: cornsilk;
+}
+
+.company-btn {
+  height: 40px;
+  border: none;
+  font-size: large;
+  color: black;
+  background-color: rgb(0, 110, 255);
+  opacity: 0.8;
+  border-radius: 10px;
+  color: white;
+}
+
+.company-form:hover {
+  opacity: 0.95;
+}
