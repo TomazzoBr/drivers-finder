@@ -1,12 +1,16 @@
 import React from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./driver-dashboard.css";
+// import CommomDashboard from "../common-dashboard/common-dashboard";
 
 function DriverDashboard() {
   const [name, setName] = useState("");
   const [city, setCity] = useState("");
   const [job, setJob] = useState("");
   const [time, setTime] = useState(0);
+
+  const navigate = useNavigate();
 
   function handleNameChange(e) {
     setName(e.target.value);
@@ -24,20 +28,27 @@ function DriverDashboard() {
     setTime(e.target.value);
   }
 
-  function handleSubmit() {
-    if (!name || !city || !job || !time)
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (!name || !city || !time)
       return alert(`Driver, please complete the form!`);
     console.log(name, city, job, time); // Post driver
     setName("");
     setCity("");
-    setJob("");
     setTime(0);
+    navigate("/driver/:id");
   }
 
   return (
     <div>
       <h5>Please driver, tell us a bit about you</h5>
-      <form type="submit" className="driver-form" onSubmit={handleSubmit}>
+      <form
+        type="submit"
+        className="driver-form"
+        onSubmit={(e) => {
+          handleSubmit(e);
+        }}
+      >
         <label>
           {" "}
           Name
@@ -63,24 +74,34 @@ function DriverDashboard() {
         <label>
           {" "}
           Kind of Job
-          <input
+          <select
             id="job"
             type="text"
             placeholder="Kind of job desired to work with"
             value={job}
             onChange={handleJobChange}
-          ></input>
+          >
+            <option value="fresh-food">Fruits, vegetables, legumes</option>
+            <option value="industrial">Small industrial products</option>
+            <option value="personal">Personal stuff</option>
+            <option value="eletronics">Eletronics</option>
+            <option value="other">Other</option>
+          </select>
         </label>
         <label>
           {" "}
           Time available
-          <input
+          <select
             id="city"
             type="text"
             placeholder="How many hours you have available"
             value={time}
             onChange={handleTimeChange}
-          ></input>
+          >
+            <option value="short">1-4 Hours</option>
+            <option value="medium">4-7 Hours</option>
+            <option value="long">7-10 Hours</option>
+          </select>
         </label>
         <button className="driver-btn">Create your profile!</button>
       </form>

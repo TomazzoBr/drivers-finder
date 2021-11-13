@@ -1,12 +1,15 @@
 import React from "react";
 import { useState } from "react";
-// import Profile from "../profile/profile";
+import { useNavigate } from "react-router-dom";
+// import CommomDashboard from "../common-dashboard/common-dashboard";
 import "./company-dashboard.css";
 
 function CompanyDashboard() {
   const [name, setName] = useState("");
   const [city, setCity] = useState("");
   const [goods, setGoods] = useState("");
+
+  const navigate = useNavigate();
 
   function handleNameChange(e) {
     setName(e.target.value);
@@ -20,19 +23,25 @@ function CompanyDashboard() {
     setGoods(e.target.value);
   }
 
-  function handleSubmit() {
-    if (!name || !city || !goods)
-      return alert(`You need to complete the form!`);
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (!name || !city) return alert(`You need to complete the form!`);
     console.log(name, city, goods); // Post company
     setName("");
     setCity("");
-    setGoods("");
+    navigate("/company/:id");
   }
 
   return (
     <div>
       <h5>Please, tell us a bit about your company</h5>
-      <form type="submit" className="company-form" onSubmit={handleSubmit}>
+      <form
+        type="submit"
+        className="company-form"
+        onSubmit={(e) => {
+          handleSubmit(e);
+        }}
+      >
         <label>
           {" "}
           Company Name
@@ -72,6 +81,7 @@ function CompanyDashboard() {
             <option value="other">Other</option>
           </select>
         </label>
+
         <button className="company-btn">Create company profile!</button>
       </form>
     </div>
