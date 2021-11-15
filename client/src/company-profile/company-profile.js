@@ -35,17 +35,20 @@ function CompanyProfile() {
             <p>job3 description</p>
           </div>
         </div>
-        <button>Edit Details</button>
+        <button style={{ "margin-top": "20px" }}>Edit Details</button>
+        <Link
+          to={`/company/:id/driverslist`}
+          style={{ textDecoration: "none" }}
+        >
+          <button>Find driver</button>
+        </Link>
+        <Link to="/company/:id/newjob" style={{ textDecoration: "none" }}>
+          <label>
+            {" "}
+            Post new job<button>+</button>
+          </label>
+        </Link>
       </div>
-      <Link to={`/company/:id/driverslist`}>
-        <button>Find driver</button>
-      </Link>
-      <Link to="/company/:id/newjob">
-        <label>
-          {" "}
-          Post new job<button>+</button>
-        </label>
-      </Link>
     </div>
   );
 }

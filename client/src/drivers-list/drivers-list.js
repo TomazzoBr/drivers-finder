@@ -4,16 +4,25 @@ import "./drivers-list.css";
 
 function DriversList() {
   return (
-    <div>
+    <div className="driverslist">
       <div>
         <Link to={"/company/:id"}>
           <h4>← Back to profile</h4>
         </Link>
       </div>
       <ul>
-        <ol>Driver1</ol>
-        <ol>Driver2</ol>
-        <ol>Driver3</ol>
+        <div>
+          <ol>Driver1</ol>
+          <p title="select driver">🚚</p>
+        </div>
+        <div>
+          <ol>Driver2</ol>
+          <p title="select driver">🚚</p>
+        </div>
+        <div>
+          <ol>Driver3</ol>
+          <p title="select driver">🚚</p>
+        </div>
       </ul>
     </div>
   );

@@ -1,0 +1,43 @@
+.options-container {
+  display: flex;
+  align-items: center;
+  margin-top: 150px;
+  justify-content: space-around;
+}
+
+.company-register {
+  display: flex;
+  align-items: center;
+  background: rgb(135, 206, 250, 0.6);
+  margin-right: 20px;
+  width: 100px;
+  height: 20vh;
+  border-radius: 40px;
+}
+
+.driver-register {
+  display: flex;
+  align-items: center;
+  background: rgb(97, 194, 110, 0.6);
+  width: 100px;
+  height: 20vh;
+  border-radius: 40px;
+}
+
+.companyimg {
+  width: 100px;
+}
+
+.driverimg {
+  width: 100px;
+}
+
+.company-link {
+  color: white;
+  font-family: "Righteous", serif;
+}
+
+.driver-link {
+  color: white;
+  font-family: "Righteous", serif;
+}

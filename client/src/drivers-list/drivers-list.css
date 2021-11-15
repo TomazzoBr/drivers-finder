@@ -1,0 +1,10 @@
+.driverslist {
+  display: inline-flex;
+  justify-content: center;
+  flex-flow: column;
+  margin-top: 20px;
+  background: rgb(97, 194, 110, 0.6);
+  width: 80vw;
+  height: 60vh;
+  overflow: scroll;
+}
