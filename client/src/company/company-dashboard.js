@@ -7,7 +7,7 @@ import "./company-dashboard.css";
 function CompanyDashboard() {
   const [name, setName] = useState("");
   const [city, setCity] = useState("");
-  const [goods, setGoods] = useState("");
+  const [goods, setGoods] = useState("fruits, vegetables, legumes");
 
   const navigate = useNavigate();
 
@@ -29,6 +29,7 @@ function CompanyDashboard() {
     console.log(name, city, goods); // Post company
     setName("");
     setCity("");
+    setGoods("fruits, vegetables, legumes");
     navigate("/company/:id");
   }
 
@@ -74,9 +75,13 @@ function CompanyDashboard() {
             value={goods}
             onChange={handleGoodsChange}
           >
-            <option value="fresh-food">Fruits, vegetables, legumes</option>
-            <option value="industrial">Small industrial products</option>
-            <option value="personal">Personal stuff</option>
+            <option value="fruits, vegetables, legumes">
+              Fruits, vegetables, legumes
+            </option>
+            <option value="fmall industrial products">
+              Small industrial products
+            </option>
+            <option value="personal stuff">Personal stuff</option>
             <option value="eletronics">Eletronics</option>
             <option value="other">Other</option>
           </select>

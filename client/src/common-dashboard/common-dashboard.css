@@ -10,15 +10,15 @@
   display: flex;
   justify-content: space-around;
   border-radius: 5px;
-  width: 80%;
+  width: 100vw;
 }
 
 .dashboard {
-  background: rgb(121, 213, 255, 0.6);
+  background: rgb(117, 133, 150, 0.6);
   display: flex;
   justify-content: space-around;
   align-self: center;
   margin-top: 5px;
   border-radius: 5px;
-  width: 70%;
+  width: 100vw;
 }

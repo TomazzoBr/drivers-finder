@@ -20,7 +20,11 @@ function CommomDashboard({ background }) {
           background: background,
         }}
       >
-        <Link to="/" onClick={(background = "rgb(117, 133, 150, 0.6)")}>
+        <Link
+          to="/"
+          onClick={(background = "rgb(117, 133, 150, 0.6)")}
+          style={{ textDecoration: "none" }}
+        >
           <h2>Home Sweet Home</h2>
         </Link>
         <h2>Finder</h2>

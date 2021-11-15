@@ -1,10 +1,11 @@
-const express = require ('express');
+const express = require("express");
 const router = express.Router();
-const ctrl = require('./Controller/finder.js')
+const ctrl = require("./Controller/finder.js");
 
-router.post('/register/company', ctrl.postCompanyProfile);
-router.post('/register/driver', ctrl.postDriverProfile);
-router.get('/home', ctrl.getProfile);
-router.post('/home/company/jobs', ctrl.postJob);
+router.get("/company/:id", ctrl.getCompanyProfile);
+router.post("/company", ctrl.postCompanyProfile);
+router.get("/driver/:id", ctrl.getDriverProfile);
+router.post("/driver", ctrl.postDriverProfile);
+router.post("/company/:id/jobs", ctrl.postJob);
 
 module.exports = router;

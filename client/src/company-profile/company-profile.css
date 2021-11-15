@@ -1,0 +1,13 @@
+.company-profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+
+.jobslist {
+  background: rgb(133, 199, 211, 0.9);
+  width: 40%;
+  height: 100px;
+  overflow: scroll;
+}

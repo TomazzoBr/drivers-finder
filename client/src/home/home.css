@@ -1,0 +1,42 @@
+@import url(https://fonts.googleapis.com/css?family=Righteous);
+
+.home {
+  display: inline-flex;
+  position: relative;
+  flex-direction: column wrap;
+  justify-content: space-around;
+  border-radius: 5px;
+  margin-top: 50px;
+  height: 100px;
+  width: 50%;
+}
+
+.company-register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  background: rgb(135, 206, 250, 0.9);
+  font-family: "Righteous", serif;
+}
+
+.company-link {
+  color: white;
+}
+
+.driver-register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  background: rgb(97, 194, 110, 0.9);
+  font-family: "Righteous", serif;
+}
+
+.driver-link {
+  color: white;
+}
+
+label {
+  text-decoration: none;
+}

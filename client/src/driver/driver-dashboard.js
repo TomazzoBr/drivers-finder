@@ -7,8 +7,8 @@ import "./driver-dashboard.css";
 function DriverDashboard() {
   const [name, setName] = useState("");
   const [city, setCity] = useState("");
-  const [job, setJob] = useState("");
-  const [time, setTime] = useState(0);
+  const [job, setJob] = useState("fruits, vegetables, legumes");
+  const [time, setTime] = useState("1-4 Hours");
 
   const navigate = useNavigate();
 
@@ -30,18 +30,18 @@ function DriverDashboard() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (!name || !city || !time)
-      return alert(`Driver, please complete the form!`);
+    if (!name || !city) return alert(`Driver, please complete the form!`);
     console.log(name, city, job, time); // Post driver
     setName("");
     setCity("");
-    setTime(0);
+    setJob("Fruits, vegetables, legumes");
+    setTime("1-4 Hours");
     navigate("/driver/:id");
   }
 
   return (
     <div>
-      <h5>Please driver, tell us a bit about you</h5>
+      <h5>Driver, please, tell us a bit about you</h5>
       <form
         type="submit"
         className="driver-form"
@@ -77,13 +77,17 @@ function DriverDashboard() {
           <select
             id="job"
             type="text"
-            placeholder="Kind of job desired to work with"
             value={job}
+            placeholder="Kind of job desired to work with"
             onChange={handleJobChange}
           >
-            <option value="fresh-food">Fruits, vegetables, legumes</option>
-            <option value="industrial">Small industrial products</option>
-            <option value="personal">Personal stuff</option>
+            <option value="fruits, vegetables, legumes">
+              Fruits, vegetables, legumes
+            </option>
+            <option value="small industrial products">
+              Small industrial products
+            </option>
+            <option value="personal stuff">Personal stuff</option>
             <option value="eletronics">Eletronics</option>
             <option value="other">Other</option>
           </select>
@@ -98,9 +102,9 @@ function DriverDashboard() {
             value={time}
             onChange={handleTimeChange}
           >
-            <option value="short">1-4 Hours</option>
-            <option value="medium">4-7 Hours</option>
-            <option value="long">7-10 Hours</option>
+            <option value="1-4 Hours">1-4 Hours</option>
+            <option value="4-7 Hours">4-7 Hours</option>
+            <option value="7-10 Hours">7-10 Hours</option>
           </select>
         </label>
         <button className="driver-btn">Create your profile!</button>

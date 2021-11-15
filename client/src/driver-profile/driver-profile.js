@@ -9,7 +9,12 @@ function DriverProfile() {
   return (
     <div>
       <div>
-        <h4>This is the driver profile component</h4>
+        <div>
+          <Link to={"/driver"}>
+            <h4>←</h4>
+          </Link>
+          <h4>This is the driver profile component</h4>
+        </div>
         <p>this.name</p>
         <p>this.city</p>
         <p>this.jobs</p>
