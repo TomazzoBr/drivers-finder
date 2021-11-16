@@ -1,0 +1,25 @@
+.login-container {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  margin: auto;
+  width: 30vw;
+  height: 40vh;
+  background: rgb(117, 133, 150, 0.8);
+}
+
+.login-form {
+  display: flex;
+  flex-flow: column;
+}
+
+.login-btn {
+  align-self: center;
+  border: none;
+  border-radius: 3px;
+  width: 60%;
+  color: white;
+  background: black;
+}

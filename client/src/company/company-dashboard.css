@@ -7,14 +7,14 @@
   margin: 20px auto;
   padding: 10px;
   box-shadow: 0 0 10px 1px #3333;
-  background-color: lightskyblue;
+  background: lightskyblue;
   opacity: 0.9;
   text-indent: 10px;
   color: cornsilk;
   border-radius: 5px;
 }
 
-label {
+.company-label {
   display: flex;
   flex-flow: column;
 }
@@ -32,8 +32,7 @@ select {
   height: 40px;
   border: none;
   font-size: large;
-  color: black;
-  background-color: rgb(0, 110, 255);
+  background: rgb(0, 110, 255);
   opacity: 0.8;
   border-radius: 10px;
   color: white;

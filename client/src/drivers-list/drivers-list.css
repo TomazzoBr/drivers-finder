@@ -1,10 +1,24 @@
 .driverslist {
-  display: inline-flex;
+  display: flex;
   justify-content: center;
+  align-items: center;
   flex-flow: column;
-  margin-top: 20px;
-  background: rgb(97, 194, 110, 0.6);
-  width: 80vw;
+  margin: auto;
+  background: rgb(97, 194, 110, 0.9);
+  border-radius: 3px;
+  width: 60vw;
   height: 60vh;
+  border-radius: 50px;
   overflow: scroll;
+}
+
+.driver-option {
+  border: solid rgb(117, 133, 150);
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-flow: row;
+  width: 60%;
+  border-radius: 5px;
 }

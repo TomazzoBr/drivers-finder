@@ -3,15 +3,94 @@
   justify-content: center;
   align-items: center;
   flex-flow: column;
-  margin-top: 20px;
-  background: rgb(117, 133, 150, 0.6);
+  background: rgb(117, 133, 150, 0.8);
+  margin: auto;
   width: 60vw;
   height: 60vh;
+  border-radius: 3px;
+  color: white;
+}
+
+.company-data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  background: rgb(117, 133, 150, 0.9);
+  width: 50vw;
+  text-align: center;
+}
+
+.edit-btn {
+  border-radius: 3px;
+  background: rgb(133, 199, 211, 0.8);
+  margin-bottom: 10px;
+  border: none;
+}
+
+.edit-btn:hover {
+  background: rgb(133, 199, 211, 1.1);
 }
 
 .jobslist {
+  display: flex;
+  justify-content: center;
+  text-align: center;
   background: rgb(133, 199, 211, 0.9);
   width: 70%;
-  height: 25vh;
+  height: 40vh;
   overflow: scroll;
+  border-radius: 5px;
+  color: white;
+}
+
+.jobs {
+  margin-top: 20px;
+  width: 90%;
+  height: 200px;
+  border: solid rgb(117, 133, 150);
+}
+
+.btn-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.bottom-container {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 90%;
+}
+
+.find-driver {
+  background: rgb(97, 194, 110, 0.8);
+  width: 20vw;
+  border: none;
+  border-radius: 3px;
+}
+
+.find-driver:hover {
+  background: rgb(97, 194, 110, 1.1);
+}
+
+.add-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 3px;
+  background: rgb(133, 199, 211, 0.8);
+  height: 4vh;
+  width: 3vw;
+  border: none;
+}
+
+.add-btn:hover {
+  background: rgb(133, 199, 211, 1.1);
 }

@@ -4,10 +4,10 @@ import { useNavigate } from "react-router-dom";
 import "./driver-dashboard.css";
 // import CommomDashboard from "../common-dashboard/common-dashboard";
 
-function DriverDashboard() {
+function DriverDashboard({ postDriverProfile }) {
   const [name, setName] = useState("");
   const [city, setCity] = useState("");
-  const [job, setJob] = useState("fruits, vegetables, legumes");
+  const [job, setJob] = useState("Fruits, vegetables");
   const [time, setTime] = useState("1-4 Hours");
 
   const navigate = useNavigate();
@@ -31,10 +31,10 @@ function DriverDashboard() {
   function handleSubmit(e) {
     e.preventDefault();
     if (!name || !city) return alert(`Driver, please complete the form!`);
-    console.log(name, city, job, time); // Post driver
+    postDriverProfile({ name, city, job, time }); // Post driver
     setName("");
     setCity("");
-    setJob("Fruits, vegetables, legumes");
+    setJob("Fruits, vegetables");
     setTime("1-4 Hours");
     navigate("/driver/:id");
   }
@@ -49,7 +49,7 @@ function DriverDashboard() {
           handleSubmit(e);
         }}
       >
-        <label>
+        <label className="driver-label">
           {" "}
           Name
           <input
@@ -60,7 +60,7 @@ function DriverDashboard() {
             onChange={handleNameChange}
           ></input>
         </label>
-        <label>
+        <label className="driver-label">
           {" "}
           City Based
           <input
@@ -71,7 +71,7 @@ function DriverDashboard() {
             onChange={handleCityChange}
           ></input>
         </label>
-        <label>
+        <label className="driver-label">
           {" "}
           Kind of Job
           <select
@@ -81,18 +81,18 @@ function DriverDashboard() {
             placeholder="Kind of job desired to work with"
             onChange={handleJobChange}
           >
-            <option value="fruits, vegetables, legumes">
+            <option value="Fruits, vegetables">
               Fruits, vegetables, legumes
             </option>
-            <option value="small industrial products">
+            <option value="Small industrial products">
               Small industrial products
             </option>
-            <option value="personal stuff">Personal stuff</option>
-            <option value="eletronics">Eletronics</option>
-            <option value="other">Other</option>
+            <option value="Personal stuff">Personal stuff</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Other">Other</option>
           </select>
         </label>
-        <label>
+        <label className="driver-label">
           {" "}
           Time available
           <select

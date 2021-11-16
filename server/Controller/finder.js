@@ -3,13 +3,12 @@ const CompanyDb = require("../Models/company-schema");
 const JobsDb = require("../Models/company-jobs-schema");
 
 // Function to post new company/producer profile
-exports.postCompanyProfile = async (req, res) => {
+exports.saveCompanyProfile = async (req, res) => {
   try {
     const obj = await CompanyDb.create({
       name: req.body.name,
       city: req.body.city,
       goods: req.body.goods,
-      type: req.body.type,
     });
     res.send(obj);
     res.status(201);
@@ -20,14 +19,13 @@ exports.postCompanyProfile = async (req, res) => {
 };
 
 // Function to post driver profile
-exports.postDriverProfile = async (req, res) => {
+exports.saveDriverProfile = async (req, res) => {
   try {
     const obj = await DriverDb.create({
       name: req.body.name,
       city: req.body.city,
       job: req.body.job,
       time: req.body.time,
-      type: req.body.type,
     });
     res.send(obj);
     res.status(201);
@@ -65,7 +63,7 @@ exports.getDriverProfile = async (req, res) => {
 };
 
 // Function to post new jobs
-exports.postJob = async (req, res) => {
+exports.saveNewJob = async (req, res) => {
   try {
     // const companyId = req.body.companyId;
     // const company = await CompanyDb.findOne({ companyId });

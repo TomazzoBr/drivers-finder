@@ -1,29 +1,43 @@
 import React from "react";
-// import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./driver-profile.css";
 
-function DriverProfile() {
-  // const [driverProfile, setDriverProfile] = useState([]);
-
+function DriverProfile({ driver }) {
   return (
-    <div>
+    <div className="driver-data">
       <div>
         <div>
-          <Link to={"/driver"}>
-            <h4>←</h4>
-          </Link>
-          <h4>This is the driver profile component</h4>
+          <div>
+            <Link
+              to={"/driver"}
+              style={{
+                textDecoration: "none",
+              }}
+            >
+              <h4 className="left-arrow">←</h4>
+            </Link>
+            {driver ? <h4>Hello, {driver.name}!</h4> : <h4>Hello stranger!</h4>}
+          </div>
+          {driver ? (
+            <div className="wrapper">
+              <h5>Name: {driver.name}</h5>
+              <p>City based: {driver.city}</p>
+              <p>Type of job: {driver.job}</p>
+              <p>Time available: {driver.time}</p>
+            </div>
+          ) : (
+            <div className="wrapper">
+              <p>No Data</p>
+            </div>
+          )}
+          <button className="edit-btn">Edit Details</button>
         </div>
-        <p>this.name</p>
-        <p>this.city</p>
-        <p>this.jobs</p>
-        <p>this.time</p>
-        <button>Edit Details</button>
       </div>
-      <Link to={`/driver/:id/jobslist`}>
-        <button>Find jobs Available</button>
-      </Link>
+      <div className="find-jobs">
+        <Link to={`/driver/:id/jobslist`}>
+          <button className="find-btn">Find jobs available</button>
+        </Link>
+      </div>
     </div>
   );
 }

@@ -1,13 +1,12 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import CommomDashboard from "../common-dashboard/common-dashboard";
 import "./company-dashboard.css";
 
-function CompanyDashboard() {
+function CompanyDashboard({ postCompanyProfile }) {
   const [name, setName] = useState("");
   const [city, setCity] = useState("");
-  const [goods, setGoods] = useState("fruits, vegetables, legumes");
+  const [goods, setGoods] = useState("Fruits, vegetables");
 
   const navigate = useNavigate();
 
@@ -23,27 +22,20 @@ function CompanyDashboard() {
     setGoods(e.target.value);
   }
 
-  function handleSubmit(e) {
-    e.preventDefault();
+  function handleSubmit() {
     if (!name || !city) return alert(`You need to complete the form!`);
-    console.log(name, city, goods); // Post company
+    postCompanyProfile({ name, city, goods }); // Post company
     setName("");
     setCity("");
-    setGoods("fruits, vegetables, legumes");
+    setGoods("Fruits, vegetables");
     navigate("/company/:id");
   }
 
   return (
     <div>
       <h5>Please, tell us a bit about your company</h5>
-      <form
-        type="submit"
-        className="company-form"
-        onSubmit={(e) => {
-          handleSubmit(e);
-        }}
-      >
-        <label>
+      <form type="submit" className="company-form" onSubmit={handleSubmit}>
+        <label className="company-label">
           {" "}
           Company Name
           <input
@@ -54,7 +46,7 @@ function CompanyDashboard() {
             onChange={handleNameChange}
           ></input>
         </label>
-        <label>
+        <label className="company-label">
           {" "}
           City Based
           <input
@@ -65,7 +57,7 @@ function CompanyDashboard() {
             onChange={handleCityChange}
           ></input>
         </label>
-        <label>
+        <label className="company-label">
           {" "}
           Type of Goods
           <select
@@ -75,15 +67,13 @@ function CompanyDashboard() {
             value={goods}
             onChange={handleGoodsChange}
           >
-            <option value="fruits, vegetables, legumes">
-              Fruits, vegetables, legumes
-            </option>
-            <option value="fmall industrial products">
+            <option value="Fruits, vegetables">Fruits, vegetables</option>
+            <option value="Small industrial products">
               Small industrial products
             </option>
-            <option value="personal stuff">Personal stuff</option>
-            <option value="eletronics">Eletronics</option>
-            <option value="other">Other</option>
+            <option value="Personal stuff">Personal stuff</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Other">Other</option>
           </select>
         </label>
 

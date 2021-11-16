@@ -2,50 +2,56 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./company-profile.css";
 
-function CompanyProfile() {
+function CompanyProfile({ company }) {
   return (
-    <div>
-      <div className="company-profile">
-        <div>
-          <Link to={"/company"}>
-            <h4>←</h4>
-          </Link>
-          <h4>This is the company profile component</h4>
-        </div>
-        <p>this.name</p>
-        <p>this.city</p>
-        <p>this.goods</p>
-        <div className="jobslist">
-          <div>
-            <p>job1 name</p>
-            <p>job1 time</p>
-            <p>job1 distance</p>
-            <p>job1 description</p>
-          </div>
-          <div>
-            <p>job2 name</p>
-            <p>job2 time</p>
-            <p>job2 distance</p>
-            <p>job2 description</p>
-          </div>
-          <div>
-            <p>job3 name</p>
-            <p>job3 time</p>
-            <p>job3 distance</p>
-            <p>job3 description</p>
-          </div>
-        </div>
-        <button style={{ "margin-top": "20px" }}>Edit Details</button>
+    <div className="company-profile">
+      <div>
         <Link
-          to={`/company/:id/driverslist`}
-          style={{ textDecoration: "none" }}
+          to={"/company"}
+          style={{ textDecoration: "none", color: "white" }}
         >
-          <button>Find driver</button>
+          <h4 className="left-arrow">←</h4>
         </Link>
+        {company ? <h4>Hello, {company.name}!</h4> : <h4>Hello stranger!</h4>}
+      </div>
+      <div className="company-data">
+        {company ? (
+          <div className="wrapper">
+            <h3>Name: {company.name}</h3>
+            <p>City based: {company.city}</p>
+            <p>Type of goods: {company.goods}</p>
+          </div>
+        ) : (
+          <div className="wrapper">
+            <p>No Data</p>
+          </div>
+        )}
+        <button className="edit-btn">Edit Details</button>
+      </div>
+      <div className="jobslist">
+        <div className="jobs">
+          <h3>Delivery of 5 boxes of laptops to Codeworks</h3>
+          <h5>From Castelldefels To Barcelona</h5>
+          <h5>Short Distance</h5>
+          <h5>
+            Our company needs to delivery a few boxes of laptops to a School in
+            Poblenou, Barcelona. Payment of 10 euros.
+          </h5>
+        </div>
+      </div>
+      <div className="bottom-container">
+        <div>
+          <Link
+            to={`/company/:id/driverslist`}
+            style={{ textDecoration: "none" }}
+          >
+            <button className="find-driver">Find driver</button>
+          </Link>
+        </div>
         <Link to="/company/:id/newjob" style={{ textDecoration: "none" }}>
-          <label>
+          <label className="btn-label">
             {" "}
-            Post new job<button>+</button>
+            Post new job<button className="add-btn">+</button>
           </label>
         </Link>
       </div>
@@ -54,3 +60,11 @@ function CompanyProfile() {
 }
 
 export default CompanyProfile;
+
+// {job ? (
+//   <div>
+//     <p>{job}</p>
+//   </div>
+// ) : (
+//   <p>No jobs created.</p>
+// )}

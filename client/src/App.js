@@ -17,40 +17,32 @@ import Register from "./register/register";
 
 function App() {
   const [background, setBackground] = useState();
-  const [companies, setCompanies] = useState([]);
-  const [drivers, setDrivers] = useState([]);
-  const [jobs, setJobs] = useState([]);
+  const [company, setCompany] = useState({});
+  const [driver, setDriver] = useState({});
+  const [job, setJob] = useState([]);
 
   function handleClick(user) {
     if (user === "company") {
-      setBackground("rgb(135, 206, 250, 0.6)");
+      setBackground("rgb(135, 206, 250, 0.9)");
     } else if (user === "driver") {
-      setBackground("rgb(97, 194, 110, 0.6)");
+      setBackground("rgb(97, 194, 110, 0.9)");
     } else {
-      setBackground("rgb(117, 133, 150, 0.6)");
+      setBackground("rgb(117, 133, 150, 0.9)");
     }
   }
 
   // --- GET USE EFFECTS ----
 
-  // get companies
+  // get companies, drivers and jobs
   useEffect(() => {
-    ApiService.getCompanyProfile().then((companies) => {
-      setCompanies(companies);
+    ApiService.getCompanyProfile().then((company) => {
+      setCompany(company);
     });
-  }, []);
-
-  // get drivers
-  useEffect(() => {
-    ApiService.getDriverProfile().then((drivers) => {
-      setDrivers(drivers);
+    ApiService.getDriverProfile().then((driver) => {
+      setDriver(driver);
     });
-  }, []);
-
-  //get jobs
-  useEffect(() => {
-    ApiService.getJobs().then((jobs) => {
-      setJobs(jobs);
+    ApiService.getJobs().then((job) => {
+      setJob(job);
     });
   }, []);
 
@@ -59,20 +51,18 @@ function App() {
   // post company profile
   function postCompanyProfile(company) {
     ApiService.postCompanyProfile({ company }).then((company) =>
-      setCompanies((companies) => [...companies, company])
+      setCompany(company)
     );
   }
   // post driver
   function postDriverProfile(driver) {
     ApiService.postDriverProfile({ driver }).then((driver) =>
-      setDrivers((drivers) => [...drivers, driver])
+      setDriver(driver)
     );
   }
   // post jobs
   function postNewJob(job) {
-    ApiService.postNewJob({ job }).then((job) =>
-      setJobs((jobs) => [...jobs, job])
-    );
+    ApiService.postNewJob({ job }).then((job) => setJob(job));
   }
 
   return (
@@ -96,11 +86,11 @@ function App() {
           />
           <Route
             path="/company/:id"
-            element={<CompanyProfile companies={companies} />}
+            element={<CompanyProfile company={company} />}
           />
           <Route
             path="/company/:id/driverslist"
-            element={<DriversList drivers={drivers} />}
+            element={<DriversList driver={driver} />}
           />
           <Route
             path="/company/:id/newjob"
@@ -114,12 +104,9 @@ function App() {
           <Route
             path="/driver/:id"
             exact
-            element={<DriverProfile drivers={drivers} />}
+            element={<DriverProfile driver={driver} />}
           />
-          <Route
-            path="/driver/:id/jobslist"
-            element={<JobsList jobs={jobs} />}
-          />
+          <Route path="/driver/:id/jobslist" element={<JobsList job={job} />} />
         </Routes>
       </Router>
     </div>

@@ -1,0 +1,36 @@
+.driver-data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  background: rgb(117, 133, 150, 0.9);
+  width: 50vw;
+  margin: auto;
+  color: white;
+  text-align: center;
+}
+
+.find-jobs {
+  display: flex;
+  align-self: flex-end;
+}
+
+.edit-btn {
+  border: none;
+  border-radius: 3px;
+  background: rgb(97, 194, 110, 0.8);
+}
+
+.edit-btn:hover {
+  background: rgb(97, 194, 110, 1.1);
+}
+
+.find-btn {
+  border: none;
+  border-radius: 3px;
+  background: rgb(135, 206, 250, 0.8);
+}
+
+.find-btn:hover {
+  background: rgb(135, 206, 250, 1.1);
+}

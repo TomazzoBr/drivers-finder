@@ -14,15 +14,16 @@ function getCompanyProfile(id) {
 }
 
 function postCompanyProfile(body) {
+  const { name, city, goods } = body.company;
   return fetchRequest("/company", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      name: body.event.name,
-      city: body.event.city,
-      goods: body.event.goods,
+      name,
+      city,
+      goods,
     }),
   });
 }
@@ -33,16 +34,17 @@ function getDriverProfile(id) {
 }
 
 function postDriverProfile(body) {
+  const { name, city, job, time } = body.driver;
   return fetchRequest("/driver", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      name: body.event.name,
-      city: body.event.city,
-      job: body.event.job,
-      time: body.event.time,
+      name,
+      city,
+      job,
+      time,
     }),
   });
 }
@@ -53,18 +55,18 @@ function getJobs(companyId) {
 }
 
 function postNewJob(body, companyId) {
-  console.log(body);
+  const { size, time, distance, description } = body.job;
   return fetchRequest(`/company/${companyId}/jobs`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      companyId: companyId,
-      size: body.event.size,
-      time: body.event.time,
-      distance: body.event.distance,
-      description: body.event.description,
+      //   companyId: companyId,
+      size,
+      time,
+      distance,
+      description,
     }),
   });
 }
@@ -79,9 +81,3 @@ const ApiService = {
 };
 
 export default ApiService;
-
-// router.get("/company/:id", ctrl.getCompanyProfile);
-// router.post("/company", ctrl.postCompanyProfile);
-// router.get("/driver/:id", ctrl.getDriverProfile);
-// router.post("/driver", ctrl.postDriverProfile);
-// router.post("/company/:id/jobs", ctrl.postJob);

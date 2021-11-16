@@ -7,20 +7,35 @@
   margin: 20px auto;
   padding: 10px;
   box-shadow: 0 0 10px 1px #3333;
-  background-color: rgb(97, 194, 110);
+  background: rgb(97, 194, 110);
   opacity: 0.9;
   text-indent: 10px;
   color: cornsilk;
   border-radius: 5px;
 }
 
+.driver-label {
+  display: flex;
+  flex-flow: column;
+}
+
+input,
+select {
+  height: 40px;
+  margin: 10px;
+  border-radius: 5px;
+  border-style: inset;
+  border-color: cornsilk;
+}
+
 .driver-btn {
   height: 40px;
   border: none;
   font-size: large;
-  color: white;
-  background-color: rgb(148, 219, 67);
+  background: rgb(148, 219, 67);
+  opacity: 0.8;
   border-radius: 10px;
+  color: white;
 }
 
 .driver-form:hover {

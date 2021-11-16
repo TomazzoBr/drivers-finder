@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import truck from "../media/truck.png";
+import logo from "../media/aa.png";
 import "./common-dashboard.css";
 
 function CommomDashboard({ background }) {
@@ -11,8 +13,13 @@ function CommomDashboard({ background }) {
           background: background,
         }}
       >
-        <h1>Logo</h1>
-        <h1 className="driver-finder"> Driver Finder </h1>
+        <img
+          className="truck"
+          src={truck}
+          alt="truck"
+          onClick={() => alert("You found a driver!")}
+        />
+        <img className="driver-finder" src={logo} alt="logo-name" />
       </div>
       <div
         className="dashboard"
@@ -25,7 +32,7 @@ function CommomDashboard({ background }) {
           onClick={(background = "rgb(117, 133, 150, 0.6)")}
           style={{ textDecoration: "none" }}
         >
-          <h2>Home Sweet Home</h2>
+          <h2 style={{ color: "white" }}>Home Sweet Home</h2>
         </Link>
         <h2>Finder</h2>
       </div>

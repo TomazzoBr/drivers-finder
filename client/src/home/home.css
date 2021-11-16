@@ -6,19 +6,19 @@
   justify-content: space-around;
   align-items: center;
   align-content: center;
-  background: rgb(117, 133, 150, 0.5);
-  margin-top: 20px;
+  background: rgb(117, 133, 150, 0.7);
   border-radius: 5px;
-  height: 10vh;
-  width: 50vw;
+  height: 20vh;
+  width: 25vw;
+  margin: auto;
 }
 
 .login {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40%;
-  background: rgb(117, 133, 150, 0.6);
+  width: 8vw;
+  background: rgb(117, 133, 150);
   font-family: "Righteous", serif;
 }
 
@@ -30,8 +30,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40%;
-  background: rgb(117, 133, 150, 0.6);
+  width: 8vw;
+  background: rgb(117, 133, 150);
   font-family: "Righteous", serif;
 }
 

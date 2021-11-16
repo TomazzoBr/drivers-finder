@@ -11,8 +11,9 @@
   background: rgb(135, 206, 250, 0.6);
   margin-right: 20px;
   width: 100px;
-  height: 20vh;
+  height: 30vh;
   border-radius: 40px;
+  text-align: center;
 }
 
 .driver-register {
@@ -20,8 +21,9 @@
   align-items: center;
   background: rgb(97, 194, 110, 0.6);
   width: 100px;
-  height: 20vh;
+  height: 30vh;
   border-radius: 40px;
+  text-align: center;
 }
 
 .companyimg {

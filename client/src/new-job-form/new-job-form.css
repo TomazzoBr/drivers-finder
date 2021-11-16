@@ -1,16 +1,52 @@
 .new-job-form-container {
-  display: inline-flex;
+  display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
   background: rgb(117, 133, 150, 0.9);
-  margin-top: 20px;
+  margin: auto;
+  text-align: center;
+  height: 50vh;
   width: 70%;
 }
 
+.form-label {
+  display: flex;
+  flex-flow: column;
+}
+
+.input-describe {
+  display: flex;
+  flex-flow: column;
+  height: 8vh;
+}
+
 .new-job-form {
+  width: 80%;
+  display: flex;
+  flex-flow: column;
   margin-top: 10px;
   margin-bottom: 10px;
-  width: 70%;
   color: white;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.add-job-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 3px;
+  background: rgb(133, 199, 211, 0.7);
+  height: 4vh;
+  width: 3vw;
+  border: none;
+}
+
+.add-job-btn:hover {
+  background: rgb(133, 199, 211, 1.1);
 }
