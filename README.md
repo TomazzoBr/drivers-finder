@@ -22,5 +22,5 @@ Backend --> For the backend, I used expressJS for my server with MongoDB and Mon
 ### About the experience
 
 This is my first full-stack project, that I did for Codeworks' solo project in Nov/2021. I had one week to develop it, at first seemed really complicated to do everything by myself, but after the planning time I could see clearer what I had to do and how I'd do it.
-![Excalidraw-plan](/excalidraw-plan.png)
+![Excalidraw-plan](/Excalidraw-plan.png)
 I used excalidraw to plan all the app's interface, after that I already could see all the components, forms and the data flow that I needed for it. I also used the free database design to organize my initial schema for the project.
