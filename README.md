@@ -5,9 +5,13 @@ App developed to link companies and local drivers.
 ![Front-Page](/front-page.png)
 After reading some news about the shortage of truck drivers in the U.K., I decided to build this app to so companies can find local drivers that can deliver goods and reduce the shortage problem.
 ![Selector](/selector.png)
+
 Companies can deliver their goods with no delays and might save money hiring the drivers from the app.
+
 ![Company-form](/company.png)
+
 Drivers can make some money while doing some daily route, travelers can also earn during their trips.
+
 ![Driver-form](/driver.png)
 
 ## Getting started
