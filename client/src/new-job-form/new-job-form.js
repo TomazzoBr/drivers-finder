@@ -29,7 +29,7 @@ function NewJobForm({ postNewJob }) {
 
   function handleSubmit() {
     if (!details) return alert(`Please, describe the job.`);
-    postNewJob({ kindOfJob, timeRequired, distance, details }); // Post job
+    postNewJob({ kindOfJob, timeRequired, distance, details });
     setKindOfJob("Small");
     setTimeRequired("Low");
     setDistance("Short");

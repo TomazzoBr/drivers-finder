@@ -31,9 +31,8 @@ function App() {
     }
   }
 
-  // --- GET USE EFFECTS ----
+  // --- GET FUNCTIONS ----
 
-  // get companies, drivers and jobs
   useEffect(() => {
     ApiService.getCompanyProfile().then((company) => {
       setCompany(company);
@@ -48,19 +47,18 @@ function App() {
 
   // --- POST FUNCTIONS ----
 
-  // post company profile
   function postCompanyProfile(company) {
     ApiService.postCompanyProfile({ company }).then((company) =>
       setCompany(company)
     );
   }
-  // post driver
+
   function postDriverProfile(driver) {
     ApiService.postDriverProfile({ driver }).then((driver) =>
       setDriver(driver)
     );
   }
-  // post jobs
+
   function postNewJob(job) {
     ApiService.postNewJob({ job }).then((job) => setJob(job));
   }

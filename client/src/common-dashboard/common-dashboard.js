@@ -13,13 +13,13 @@ function CommomDashboard({ background }) {
           background: background,
         }}
       >
+        <img className="driver-finder" src={logo} alt="logo-name" />
         <img
           className="truck"
           src={truck}
           alt="truck"
           onClick={() => alert("You found a driver!")}
         />
-        <img className="driver-finder" src={logo} alt="logo-name" />
       </div>
       <div
         className="dashboard"

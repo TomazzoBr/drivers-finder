@@ -3,12 +3,12 @@ const url = "http://localhost:4000";
 function fetchRequest(path, options) {
   return fetch(url + path, options)
     .then((res) => (res.status < 400 ? res : Promise.reject()))
-    .then((res) => (res.status !== 204 ? res.json() : res)) // 204 - No content
+    .then((res) => (res.status !== 204 ? res.json() : res))
     .catch((err) => {
       console.error("Error", err);
     });
 }
-// Company's get and post functions
+
 function getCompanyProfile(id) {
   return fetchRequest(`/company/${id}`);
 }
@@ -28,7 +28,6 @@ function postCompanyProfile(body) {
   });
 }
 
-// Driver's get and post functions
 function getDriverProfile(id) {
   return fetchRequest(`/driver/${id}`);
 }
@@ -62,7 +61,6 @@ function postNewJob(body, companyId) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      //   companyId: companyId,
       size,
       time,
       distance,

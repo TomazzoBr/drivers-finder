@@ -1,5 +1,4 @@
 import React from "react";
-// import { Link } from "react-router-dom";
 import "./login.css";
 
 function Login() {
@@ -18,5 +17,4 @@ function Login() {
   );
 }
 
-// form on submit should redirect to the profile page
 export default Login;

@@ -5,13 +5,8 @@
 }
 
 .truck {
-  position: absolute;
-  animation: linear infinite;
-  animation-name: truck;
-  animation-duration: 7s;
-  animation-iteration-count: 2;
+  margin-left: 20px;
   height: 50px;
-  margin-top: 7%;
   z-index: 3;
 }
 
@@ -23,7 +18,8 @@
   margin-top: 20px;
   background: rgb(117, 133, 150, 0.9);
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
   width: 100vw;
   height: 15vh;
   z-index: 1;
@@ -37,24 +33,4 @@
   margin-top: 5px;
   width: 100vw;
   font-family: "Righteous", serif;
-}
-
-@keyframes truck {
-  0% {
-    left: 0;
-  }
-  48% {
-    transform: rotateY(0deg);
-  }
-  50% {
-    left: calc(100% - 100px);
-    transform: rotateY(180deg);
-  }
-  98% {
-    transform: rotateY(180deg);
-  }
-  100% {
-    left: 0;
-    transform: rotateY(0deg);
-  }
 }

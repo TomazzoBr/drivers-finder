@@ -24,7 +24,7 @@ function CompanyDashboard({ postCompanyProfile }) {
 
   function handleSubmit() {
     if (!name || !city) return alert(`You need to complete the form!`);
-    postCompanyProfile({ name, city, goods }); // Post company
+    postCompanyProfile({ name, city, goods });
     setName("");
     setCity("");
     setGoods("Fruits, vegetables");

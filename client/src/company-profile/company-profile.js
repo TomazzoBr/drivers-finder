@@ -60,11 +60,3 @@ function CompanyProfile({ company }) {
 }
 
 export default CompanyProfile;
-
-// {job ? (
-//   <div>
-//     <p>{job}</p>
-//   </div>
-// ) : (
-//   <p>No jobs created.</p>
-// )}

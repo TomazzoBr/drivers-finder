@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./driver-dashboard.css";
-// import CommomDashboard from "../common-dashboard/common-dashboard";
 
 function DriverDashboard({ postDriverProfile }) {
   const [name, setName] = useState("");
@@ -31,7 +30,7 @@ function DriverDashboard({ postDriverProfile }) {
   function handleSubmit(e) {
     e.preventDefault();
     if (!name || !city) return alert(`Driver, please complete the form!`);
-    postDriverProfile({ name, city, job, time }); // Post driver
+    postDriverProfile({ name, city, job, time });
     setName("");
     setCity("");
     setJob("Fruits, vegetables");
