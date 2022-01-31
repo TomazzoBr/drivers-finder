@@ -1,4 +1,6 @@
 import React from "react";
+import { connect } from "react-redux";
+import { driverDashboard, companyDashboard } from "./redux/action";
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
@@ -111,4 +113,17 @@ function App() {
   );
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+  // Map your state to props
+  // REMOVE-START
+  counter: state.counter,
+  todos: state.todos,
+  //REMOVE-END
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  driverDashboard: () => dispatch(driverDashboard()),
+  companyDashboard: () => dispatch(companyDashboard()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
